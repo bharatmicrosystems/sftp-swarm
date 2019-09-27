@@ -10,7 +10,7 @@ RUN groupadd sftpgrp
 RUN mkdir -p /var/transfers/sftp/user/incoming
 RUN mkdir -p /var/transfers/sftp/user/outgoing
 RUN useradd -s /bin/nologin -g sftpgrp -d /var/transfers/sftp/user user
-echo "user:password" | chpasswd
+RUN echo "user:password" | chpasswd
 
 RUN chown -R user:sftpgrp /var/transfers/sftp/user
 RUN chmod 2770 /var/transfers/sftp/user
