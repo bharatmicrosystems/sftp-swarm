@@ -13,12 +13,12 @@ steps:
  - name: 'gcr.io/cloud-builders/docker'
    args: ["push", "gcr.io/$PROJECT_ID/sftpswarmagent"]
 # This step deploys the new version of our container image in the hello-cloudbuild Kubernetes Engine cluster.
-- name: 'gcr.io/cloud-builders/kubectl'
-  id: Deploy
-  args:
-   - 'apply'
-   - '-f'
-   - 'kubernetes.yaml'
-  env:
-   - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
-   - 'CLOUDSDK_CONTAINER_CLUSTER=sftp-swarm'
+ - name: 'gcr.io/cloud-builders/kubectl'
+   id: Deploy
+   args:
+    - 'apply'
+    - '-f'
+    - 'kubernetes.yaml'
+   env:
+    - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=sftp-swarm'
