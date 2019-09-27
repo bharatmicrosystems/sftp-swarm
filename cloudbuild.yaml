@@ -7,7 +7,7 @@ steps:
     - |
       docker pull gcr.io/$PROJECT_ID/sftpswarmagent:latest || exit 0
 # Build a docker image
- - name: 'gcr.io/cloud-builders/sftpswarm'
+ - name: 'gcr.io/cloud-builders/docker'
    args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/sftpswarmagent', '--cache-from', 'gcr.io/$PROJECT_ID/sftpswarmagent', 'Dockerfile_agent' ]
 # Push the docker image to container registry
  - name: 'gcr.io/cloud-builders/docker'
