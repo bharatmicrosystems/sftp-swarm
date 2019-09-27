@@ -18,5 +18,5 @@ RUN chmod 2770 /var/transfers/sftp/user
 VOLUME /var/transfers
 
 EXPOSE 22
-CMD ["/bin/bash", "run"]
+CMD ["/bin/bash"]
 #
