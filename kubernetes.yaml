@@ -16,6 +16,7 @@ spec:
       containers:
       - name: swarm-worker
         image: gcr.io/playground-s-11-8679b2/sftpswarmworker
+        imagePullPolicy: Always
         ports:
         - containerPort: 22
 ---
