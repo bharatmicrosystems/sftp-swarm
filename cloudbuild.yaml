@@ -8,7 +8,7 @@ steps:
       docker pull gcr.io/$PROJECT_ID/sftpswarmworker:latest || exit 0
 # Build a docker image
  - name: 'gcr.io/cloud-builders/docker'
-   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/sftpswarmworker', '--cache-from', 'gcr.io/$PROJECT_ID/sftpswarmworker', './Dockerfile_worker' ]
+   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/sftpswarmworker', '--cache-from', 'gcr.io/$PROJECT_ID/sftpswarmworker', 'Dockerfile_worker' ]
 # Push the docker image to container registry
  - name: 'gcr.io/cloud-builders/docker'
    args: ["push", "gcr.io/$PROJECT_ID/sftpswarmworker"]
