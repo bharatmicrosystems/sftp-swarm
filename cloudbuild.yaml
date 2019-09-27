@@ -12,7 +12,7 @@ steps:
 # Push the docker image to container registry
  - name: 'gcr.io/cloud-builders/docker'
    args: ["push", "gcr.io/$PROJECT_ID/sftpswarmagent"]
- - 'gcr.io/$PROJECT_ID/sftpswarmagent'
+    - 'gcr.io/$PROJECT_ID/sftpswarmagent'
 # This step deploys the new version of our container image in the hello-cloudbuild Kubernetes Engine cluster.
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
