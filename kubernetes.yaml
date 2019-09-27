@@ -2,33 +2,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swarm-agent
+  name: swarm-worker
 spec:
   selector:
     matchLabels:
-      run: swarm-agent
+      run: swarm-worker
   replicas: 2
   template:
     metadata:
       labels:
-        run: swarm-agent
+        run: swarm-worker
     spec:
       containers:
-      - name: swarm-agent
-        image: gcr.io/playground-s-11-8679b2/sftpswarmagent
+      - name: swarm-worker
+        image: gcr.io/playground-s-11-8679b2/sftpswarmworker
         ports:
         - containerPort: 22
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: swarm-agent
+  name: swarm-worker
   labels:
-    run: swarm-agent
+    run: swarm-worker
 spec:
   type: LoadBalancer
   ports:
   - port: 22
     protocol: TCP
   selector:
-    run: swarm-agent
+    run: swarm-worker
