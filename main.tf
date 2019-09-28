@@ -1,7 +1,7 @@
 // Configure the Google Cloud provider
 provider "google" {
  credentials = "${file("credentials.json")}"
- project     = "playground-s-11-8679b2"
+ project     = "playground-s-11-39be01"
  region      = "europe-west1"
 }
 
