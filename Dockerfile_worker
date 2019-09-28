@@ -16,6 +16,7 @@ RUN chown -R user:sftpgrp /var/transfers/sftp/user
 RUN chmod 2770 /var/transfers/sftp/user
 
 COPY entrypoint.sh /tmp/entrypoint.sh
+RUN chmod 777 /tmp/entrypoint.sh
 
 VOLUME /var/transfers
 
